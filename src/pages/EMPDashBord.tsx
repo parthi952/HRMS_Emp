@@ -5,7 +5,6 @@ import {
   Clock,
   Calendar,
   Plus,
-  Check,
   Bell
 } from "lucide-react";
 
@@ -279,7 +278,7 @@ export const EMPDashBord: React.FC = () => {
           const errData = await response.json().catch(() => ({}));
           throw new Error(errData.detail || "Failed to check out");
         }
-        const data = await response.json();
+        await response.json();
         setClockedIn(false);
         setClockTime(null);
         setCheckedOutToday(true);

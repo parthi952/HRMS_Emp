@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { useUser } from "./UserContext";
+import { Api_URL } from "../APILINK";
 
 // --- Types & Interfaces for Employee Data ---
 export interface EmployeeProfile {
@@ -93,7 +94,7 @@ interface UserDataContextType {
 
 const UserDataContext = createContext<UserDataContextType | undefined>(undefined);
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = `${Api_URL}`;
 
 export const UserDataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated, user } = useUser();

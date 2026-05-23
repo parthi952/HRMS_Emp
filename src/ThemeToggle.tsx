@@ -215,10 +215,10 @@ const THEMES = [
   },
 ];
 export const ThemeToggle = () => {
-  const { primaryColor, setTheme } = useTheme();
+  const { currentPreset, changeThemePreset } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
-  const currentTheme = THEMES.find(t => t.primary === primaryColor) || THEMES[0];
+  const currentTheme = THEMES.find(t => t.name === currentPreset.id) || THEMES[0];
 
   return (
     <div className="relative">
@@ -229,7 +229,7 @@ export const ThemeToggle = () => {
       >
         <div
           className="w-4 h-4 rounded-full shadow-inner"
-          style={{ backgroundColor: `hsl(${primaryColor})` }}
+          style={{ backgroundColor: currentPreset.primaryHex }}
         />
         <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">
           {currentTheme.name}
@@ -269,10 +269,10 @@ export const ThemeToggle = () => {
                   <button
                     key={t.name}
                     onClick={() => {
-                      setTheme(t.primary, t.bg, t.text, t.card, t.cardBorder, t.muted);
+                      changeThemePreset(t.name.toLowerCase());
                       setIsOpen(false);
                     }}
-                    className={`w-full flex items-center justify-between p-2 rounded-xl transition-all group ${primaryColor === t.primary
+                    className={`w-full flex items-center justify-between p-2 rounded-xl transition-all group ${currentPreset.id === t.name.toLowerCase()
                         ? "bg-primary/5 text-primary"
                         : "hover:bg-slate-50 text-slate-600"
                       }`}
@@ -284,7 +284,7 @@ export const ThemeToggle = () => {
                       />
                       <span className="text-[12px] font-bold">{t.name}</span>
                     </div>
-                    {primaryColor === t.primary && (
+                    {currentPreset.id === t.name.toLowerCase() && (
                       <Check size={14} className="text-primary" />
                     )}
                   </button>

@@ -1,5 +1,5 @@
 import { Loader2 } from 'lucide-react';
-import { layoutTheme } from "../../Themes/ComponentsThems/LayoutTheme";
+import { layoutTheme } from "../Themes/ComponentsThems/LayoutTheme";
 
 const PageLoading = () => {
   return (

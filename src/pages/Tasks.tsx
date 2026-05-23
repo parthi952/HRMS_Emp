@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Clock, Plus, Check, Users, User as UserIcon, Calendar, FileText, ChevronRight, X, AlertCircle, Briefcase, ShieldAlert, CheckCircle2 } from "lucide-react";
+import { Clock, Plus, Check, Users, User as UserIcon, ChevronRight, X, AlertCircle, Briefcase, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../ThemeContext";
 import { useUser, getCookie } from "../Context/UserContext";

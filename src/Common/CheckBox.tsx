@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { interactiveTheme } from "../../Themes/ComponentsThems/InteractiveTheme";
+import { interactiveTheme } from "../Themes/ComponentsThems/InteractiveTheme";
 
 type CheckboxProps = {
   label?: string;

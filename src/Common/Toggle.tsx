@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { interactiveTheme } from "../../Themes/ComponentsThems/InteractiveTheme";
+import { interactiveTheme } from "../Themes/ComponentsThems/InteractiveTheme";
 
 interface ToggleProps {
   label?: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import { buttonTheme } from "../../Themes/ComponentsThems/ButtonTheme";
+import { buttonTheme } from "../Themes/ComponentsThems/ButtonTheme";
 
 interface Column<T> {
   header: string;

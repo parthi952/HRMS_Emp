@@ -1,4 +1,5 @@
-import { buttonTheme } from "../../Themes/ComponentsThems/ButtonTheme";
+import React from "react";
+import { buttonTheme } from "../Themes/ComponentsThems/ButtonTheme";
 
 interface ButtonProps {
   B_name: string;

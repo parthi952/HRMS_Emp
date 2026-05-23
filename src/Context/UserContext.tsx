@@ -1,4 +1,6 @@
+import { ApertureIcon } from "lucide-react";
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { Api_URL } from "../APILINK";
 
 // --- Cookie Helper Functions ---
 export const setCookie = (name: string, value: string, days?: number) => {
@@ -51,7 +53,7 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = `${Api_URL}`;
 
 export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);

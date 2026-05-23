@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { inputTheme } from "../../Themes/ComponentsThems/InputTheme";
+import { inputTheme } from "../Themes/ComponentsThems/InputTheme";
 
 type FormProps = {
   Lable?: string;

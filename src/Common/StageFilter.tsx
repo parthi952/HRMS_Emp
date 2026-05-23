@@ -1,5 +1,5 @@
 import { Filter } from "lucide-react";
-import { badgeTheme } from "../../Themes/ComponentsThems/BadgeTheme";
+import { badgeTheme } from "../Themes/ComponentsThems/BadgeTheme";
 
 interface StageFilterProps {
   stages: string[];
