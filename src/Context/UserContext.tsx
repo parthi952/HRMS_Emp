@@ -1,4 +1,4 @@
-import { ApertureIcon } from "lucide-react";
+
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Api_URL } from "../APILINK";
 
