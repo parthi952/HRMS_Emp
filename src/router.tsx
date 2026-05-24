@@ -100,7 +100,7 @@ export const router = createBrowserRouter([
 ],
 
 {
-  basename: "/hrm-tlm/",
+  basename: "/hrm-emp/",
 }
 );
 
