@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../ThemeContext";
 import { useUser, getCookie } from "../Context/UserContext";
 import StatCard from "../Common/StatCard";
+import { Api_URL } from "../APILINK";
 
 interface LeaveHistoryEntry {
   id?: number;
@@ -15,6 +16,8 @@ interface LeaveHistoryEntry {
   Reason: string;
   leave_type?: string;
 }
+
+const API_URL=(`${Api_URL}`);
 
 export const Leaves: React.FC = () => {
   const { currentPreset } = useTheme();
@@ -46,7 +49,7 @@ export const Leaves: React.FC = () => {
         ...(token ? { "Authorization": `Bearer ${token}` } : {})
       };
 
-      const response = await fetch(`http://localhost:8000/leave/history/${empId}`, { headers });
+      const response = await fetch(`${API_URL}/leave/history/${empId}`, { headers });
       if (!response.ok) {
         throw new Error("Could not download your time-off history logs.");
       }
@@ -139,7 +142,7 @@ export const Leaves: React.FC = () => {
         Reason: reason
       };
 
-      const response = await fetch("http://localhost:8000/leave/apply", {
+      const response = await fetch(`${API_URL}/leave/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

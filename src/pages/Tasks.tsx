@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../ThemeContext";
 import { useUser, getCookie } from "../Context/UserContext";
 import StatCard from "../Common/StatCard";
+import { Api_URL } from "../APILINK";
 
 interface BackendTask {
   ID: number;
@@ -49,7 +50,7 @@ export const Tasks: React.FC = () => {
   const [newEndDate, setNewEndDate] = useState(new Date().toISOString().split("T")[0]);
   const [newAssignedEmpId, setNewAssignedEmpId] = useState("");
 
-  const API_BASE_URL = "http://localhost:8000";
+  const API_BASE_URL = `${Api_URL}`;
 
   const getAuthHeaders = () => {
     const token = getCookie("auth_access_token");

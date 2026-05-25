@@ -3,6 +3,7 @@ import { Download, Landmark, Wallet, ShieldAlert, CreditCard } from "lucide-reac
 import { useTheme } from "../ThemeContext";
 import { useUserData } from "../Context/UserData";
 import { useUser, getCookie } from "../Context/UserContext";
+import { Api_URL } from "../APILINK";
 
 interface UploadedPayslip {
   id: number;
@@ -19,7 +20,7 @@ export const Payroll: React.FC = () => {
   const [slips, setSlips] = useState<UploadedPayslip[]>([]);
   const [loadingSlips, setLoadingSlips] = useState(true);
 
-  const API_BASE_URL = "http://localhost:8000";
+  const API_BASE_URL = `${Api_URL}`;
 
   const getAuthHeaders = () => {
     const token = getCookie("auth_access_token");
